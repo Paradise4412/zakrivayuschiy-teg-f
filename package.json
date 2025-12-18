@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "prettier": "^3.7.4",
+    "stylelint": "^16.26.1"
+  },
+  "scripts": {
+    "test": "prettier --check './**/*.{html,css,js}'",
+    "format": "prettier --write './**/*.{html,css,js}'",
+    "lint": "stylelint '**/*.{css,html}'",
+    "lintfix": "stylelint '**/*.{css,html}' --fix",
+    "checkall": "npm run test && npm run lint",
+    "fixall": "npm run format && npm run lintfix"
+  }
+}
