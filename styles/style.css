@@ -22,7 +22,7 @@
 .header {
   inline-size: var(--block-width);
   font-family: var(--PressStart2P-font);
-  min-block-size: clamp(327px, 340px, 368px);
+  padding-block: clamp(120px, 140px, 160px);
   color: #000;
   display: flex;
   flex-direction: column;
@@ -35,11 +35,13 @@
   border: solid 2px #000;
 }
 .header__logo {
-  font-size: clamp(49px, 51px, 65px);
+  font-size: clamp(49px, calc(49px + 16px * (100vw - 375px) / 325px), 65px);
+  font-variation-settings: "wght" var(--header-wght);
 }
 .header__title {
-  font-size: clamp(14px, 16px, 23px);
+  font-size: clamp(14px, calc(14px + 9px * (100vw - 375px) / 325px), 23px);
   padding-block-start: 20px;
+  text-transform: uppercase;
 }
 /* main */
 .card {
@@ -54,6 +56,8 @@
   padding-inline: 10px;
   padding-block: 4px;
   font-size: var(--font-size-text);
+  font-family: var(--Inter-font);
+  font-variation-settings: "wght" var(--header-wght);
 }
 .card-text {
   padding: 25px;
@@ -63,6 +67,7 @@
   font-size: var(--font-size-text);
   line-height: 1.2;
   gap: 25px;
+  font-variation-settings: "wght" var(--card-wght);
 }
 .card-img {
   position: relative;
@@ -97,8 +102,7 @@
   display: flex;
   flex-direction: row;
   justify-content: end;
-  padding-block: 20px;
-  gap: 8px;
+  padding-block: 25px;
 }
 .card__like-button {
   background-color: transparent;
@@ -109,31 +113,10 @@
   font-family: var(--PressStart2P-font);
   font-size: 14px;
   padding: 9px 17px;
-  margin-inline-end: 25px;
   gap: 10px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 0 0 #000;
-  transition: box-shadow 0.3s ease;
+  margin-inline-end: 25px;
 }
 
-.card__like-button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 0 #000;
-}
-
-.card__like-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 0;
-}
 .blur-filt {
   filter: blur(3px);
 }
@@ -155,9 +138,6 @@
 .some-filt {
   filter: contrast(150%) brightness(80%) sepia(50%);
 }
-.card__like-button:hover::before {
-  transform: translateX(0);
-}
 
 .button__text {
   position: relative;
@@ -165,7 +145,45 @@
   color: var(--button-text-color);
   mix-blend-mode: difference;
 }
+
+.button {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 #000;
+  transition: box-shadow 0.3s ease;
+  font-family: var(--PressStart2P-font);
+  box-sizing: border-box;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
 .card__icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  inline-size: 48px;
+  block-size: 38px;
   background-color: transparent;
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
@@ -175,7 +193,6 @@
   outline: none;
   border-color: #000;
 }
-
 .card__icon-button:focus-visible {
   border-color: #000;
 }
@@ -184,11 +201,11 @@
   position: fixed;
   inset: 0;
   margin: auto;
-  padding: 30px;
+  padding-inline: 30px;
+  padding-block: 40px;
   background-color: #fff;
   border: 2px solid #000;
   max-inline-size: 353px;
-  block-size: 191px;
   width: 100%;
   color: #000;
   text-transform: uppercase;
@@ -202,7 +219,7 @@
 }
 
 .dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: transparent;
   -webkit-backdrop-filter: blur(5px);
 }
 @supports (backdrop-filter: blur(5px)) {
@@ -231,33 +248,8 @@
   color: #000;
   font-size: var(--font-size-button);
   border: 2px solid #000;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 0 0 #000;
-  transition: box-shadow 0.3s ease;
 }
 
-.close-button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 0 #000;
-}
-
-.close-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 0;
-}
-
-.close-button:hover::before {
-  transform: translateX(0);
-}
 .card__save-button {
   inline-size: 335px;
   block-size: 55px;
@@ -270,34 +262,9 @@
   font-size: var(--font-size-button);
   margin-inline: auto;
   margin-block-end: 100px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 0 0 #000;
-  transition: box-shadow 0.3s ease;
   border: none;
   cursor: pointer;
-}
-
-.card__save-button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 0 #000;
-}
-
-.card__save-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 0;
-}
-
-.card__save-button:hover::before {
-  transform: translateX(0);
+  gap: 6px;
 }
 @media (width <= 375px) {
   .card__save-button {
@@ -307,5 +274,12 @@
   }
   .start-card-title {
     padding-inline-end: 40px;
+  }
+  .card__save-button .button__icon,
+  .card__save-button svg.button__icon {
+    width: 28px !important;
+    height: 28px !important;
+    inline-size: 28px;
+    block-size: 28px;
   }
 }
