@@ -266,6 +266,17 @@
   cursor: pointer;
   gap: 6px;
 }
+
+.card__save-button:hover .button__icon,
+.card__save-button:hover svg.button__icon {
+  color: #fff;
+  stroke: #fff;
+}
+
+.card__save-button:hover .button__icon rect,
+.card__save-button:hover svg.button__icon rect {
+  stroke: #fff;
+}
 @media (width <= 375px) {
   .card__save-button {
     inline-size: 306px;
