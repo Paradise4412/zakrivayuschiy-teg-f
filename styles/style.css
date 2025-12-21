@@ -22,7 +22,7 @@
 .header {
   inline-size: var(--block-width);
   font-family: var(--PressStart2P-font);
-  padding-block: clamp(120px, 140px, 160px);
+  padding-block: clamp(122px, 8vw, 130px);
   color: #000;
   display: flex;
   flex-direction: column;
@@ -103,6 +103,7 @@
   flex-direction: row;
   justify-content: end;
   padding-block-end: 25px;
+  gap: 3px;
 }
 .card__like-button {
   background-color: transparent;
@@ -143,6 +144,12 @@
   position: relative;
   z-index: 1;
   color: var(--button-text-color);
+  mix-blend-mode: difference;
+}
+
+.button__icon {
+  position: relative;
+  z-index: 1;
   mix-blend-mode: difference;
 }
 
@@ -233,13 +240,7 @@
 }
 
 .dialog::backdrop {
-  background-color: transparent;
-  -webkit-backdrop-filter: blur(5px);
-}
-@supports (backdrop-filter: blur(5px)) {
-  .dialog::backdrop {
-    backdrop-filter: blur(5px);
-  }
+  color: rgba(0, 0, 0, 1);
 }
 .dialog__text {
   font-family: var(--PressStart2P-font);
@@ -279,11 +280,10 @@
   font-size: var(--font-size-button);
   margin-inline: auto;
   margin-block-end: 100px;
-  border: none;
+  border: 2px solid #000;
   cursor: pointer;
   gap: 6px;
 }
-
 @media (width <= 375px) {
   .card__save-button {
     inline-size: 306px;
