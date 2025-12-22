@@ -293,7 +293,6 @@
 	z-index: 1;
 	color: #000;
 	gap: 6px;
-	cursor: pointer;
 }
 
 @media (width <= 375px) {
