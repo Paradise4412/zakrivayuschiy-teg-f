@@ -285,8 +285,16 @@
 	gap: 6px;
 }
 
-.card__save-button .button__icon svg {
+.card__save-button .button__icon {
 	mix-blend-mode: difference;
+	width: 21px;
+	height: 21px;
+	display: inline-block;
+	flex-shrink: 0;
+}
+
+.card__save-button .button__icon use {
+	fill: #000;
 }
 
 @media (width <= 375px) {
