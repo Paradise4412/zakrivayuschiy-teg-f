@@ -283,16 +283,12 @@
 	border: 2px solid #000;
 	cursor: pointer;
 	gap: 6px;
-	isolation: isolate;
-}
-
-.card__save-button .button__icon {
-	mix-blend-mode: difference;
 }
 
 .card__save-button .button__icon svg {
 	mix-blend-mode: difference;
 }
+
 @media (width <= 375px) {
 	.card__save-button {
 		inline-size: 306px;
