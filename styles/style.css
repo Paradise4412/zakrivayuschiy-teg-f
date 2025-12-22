@@ -285,14 +285,6 @@
 	gap: 6px;
 }
 
-.card__save-button .button__icon {
-	display: inline-block;
-	flex-shrink: 0;
-	vertical-align: middle;
-	position: relative;
-	z-index: 1000;
-}
-
 @media (width <= 375px) {
 	.card__save-button {
 		inline-size: 306px;
