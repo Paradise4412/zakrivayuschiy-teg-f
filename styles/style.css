@@ -294,14 +294,12 @@
 	position: relative;
 	z-index: 1;
 	color: #000;
-	transform: translateX(-100%);
-	transition: transform 0.5s ease-in-out;
+	transition: filter 0.1ms ease-in-out;
 }
 
 .card__save-button:hover .button__icon {
 	mix-blend-mode: difference;
-	transform: translateX(0);
-	color: var(--button-text-color);
+	filter: brightness(0) invert(1);
 }
 
 @media (width <= 375px) {
