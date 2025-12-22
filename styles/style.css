@@ -285,20 +285,14 @@
 	gap: 6px;
 }
 
-/* .card__save-button .button__icon {
+.card__save-button .button__icon {
 	display: inline-block;
 	flex-shrink: 0;
 	vertical-align: middle;
 	position: relative;
 	z-index: 1;
 	color: #000;
-	transition: filter 0.5s ease-in-out;
-} */
-
-/* .card__save-button:hover .button__icon {
-	mix-blend-mode: difference;
-	filter: brightness(0) invert(1);
-} */
+}
 
 @media (width <= 375px) {
 	.card__save-button {
