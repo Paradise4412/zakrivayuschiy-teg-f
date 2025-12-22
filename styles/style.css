@@ -286,15 +286,21 @@
 }
 
 .card__save-button .button__icon {
-	mix-blend-mode: difference;
 	width: 21px;
 	height: 21px;
 	display: inline-block;
 	flex-shrink: 0;
+	vertical-align: middle;
+	color: #000;
 }
 
 .card__save-button .button__icon use {
-	fill: #000;
+	fill: currentColor;
+}
+
+.card__save-button:hover .button__icon {
+	mix-blend-mode: difference;
+	color: #fff;
 }
 
 @media (width <= 375px) {
