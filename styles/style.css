@@ -291,16 +291,13 @@
 	display: inline-block;
 	flex-shrink: 0;
 	vertical-align: middle;
-	color: #000;
+	position: relative;
+	z-index: 1;
+	mix-blend-mode: difference;
 }
 
 .card__save-button .button__icon use {
-	fill: currentColor;
-}
-
-.card__save-button:hover .button__icon {
-	mix-blend-mode: difference;
-	color: #fff;
+	fill: #000;
 }
 
 @media (width <= 375px) {
