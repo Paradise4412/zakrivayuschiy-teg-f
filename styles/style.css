@@ -150,8 +150,11 @@
 .button__icon {
 	position: relative;
 	z-index: 1;
-	mix-blend-mode: difference;
 	display: inline-block;
+}
+
+.button__icon svg {
+	mix-blend-mode: difference;
 }
 
 .button {
@@ -241,7 +244,7 @@
 }
 
 .dialog::backdrop {
-	background-color: transparent;
+	background-color: rgba(0, 0, 0, 0.75);
 }
 .dialog__text {
 	font-family: var(--PressStart2P-font);
