@@ -240,7 +240,7 @@
 }
 
 .dialog::backdrop {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.75);
 }
 .dialog__text {
 	font-family: var(--PressStart2P-font);
@@ -296,8 +296,6 @@
 	}
 	.card__save-button .button__icon,
 	.card__save-button svg.button__icon {
-		width: 28px !important;
-		height: 28px !important;
 		inline-size: 28px;
 		block-size: 28px;
 	}
